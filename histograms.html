@@ -5,45 +5,6 @@
   <title>Histograms</title>
   <script src="./histograms_files/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./histograms_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script>
-    function post(path, params, method) {
-      method = method || "post"; // Set method to post by default if not specified.
-
-      // The rest of this code assumes you are not using a library.
-      // It can be made less wordy if you use one.
-      var form = document.createElement("form");
-      form.setAttribute("method", method);
-      form.setAttribute("action", path);
-
-      for (var key in params) {
-        if (params.hasOwnProperty(key)) {
-          var hiddenField = document.createElement("input");
-          hiddenField.setAttribute("type", "hidden");
-          hiddenField.setAttribute("name", key);
-          hiddenField.setAttribute("value", params[key]);
-
-          form.appendChild(hiddenField);
-        }
-      }
-      document.body.appendChild(form);
-      form.submit();
-    }
-  </script>
-  <script>
-    $(function () {
-      $('.comic').unbind().click(function (e) {
-        var comic = $(this).data('comic');
-        var neighbor = $(this).data('neighbor');
-        var target = document.location.toString();
-        var n = target.search('#');
-        if (n > 0){
-          target = target.slice(0, n)
-        }
-        post(target+'#'+comic, {'comic': comic, 'neighbor': neighbor})
-      });
-      $('.comic').css('cursor', 'pointer')
-    });
-</script>
 </head>
 <body data-gr-c-s-loaded="true" class="aliexpress_superstar_plugin_present">
 <h1>Histograms</h1>
